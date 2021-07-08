@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Financia tu 1° 0Km!</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="img/logo.png" alt="logo" class="logotipo"></div>
+        <nav class="menu">
+            <ul>
+                <li>Comprar</li>
+                <li>Vender</li>
+                <li>Financiar</li>
+                <li>Contacto</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>TU PRIMER 0km CON EL MEJOR FINANCIAMIENTO.</h1>
+        <p>Aqui podras indicarnos cual es el vehiculo que te interesa y juntos podremos encontrar la mejor financiacion
+            que se adecue a tu bolsillo. Ahora vamos a pedirte algunos datos.
+        </p>
+        <div id="formularios">            
+            <div id="solicitud" class="form">
+                <h3>Datos del solicitante</h3>
+                <form>
+                    <label for="nombre">Nombre</label><br><input type="text" id="nombre" placeholder="Escribe tu nombre">
+                    <br>
+                    <label for="apellido">Apellido</label><br><input type="text" id="apellido" placeholder="Escribe tu apellido">
+                    <br>
+                    <label for="dni">DNI</label><br><input type="text" id="dni" placeholder="Escribe tu DNI">
+                    <br>
+                    <label for="edad">Edad</label><br><input type="text" id="edad" placeholder="Ingrese su edad">
+                    <br>
+                    <label for="email">Correo electronico</label><br><input type="email" id="email" placeholder="Ingrese su email">
+                    <br>
+                    <label for="sueldo">Ingresos mensuales</label><br><input type="text" id="sueldo" placeholder="Ingrese su salario">
+                    <br>
+                    <label for="prestamo">Monto a financiar</label><br><input type="text" id="prestamo" placeholder="Ingrese el monto a financiar">
+                    <br>
+                    <label>Cantidad de cuotas</label>
+                    <br>
+                    <select id="cuotas">
+                        <option>Seleccionar</option>
+                        <option>12 Cuotas</option>
+                        <option>24 Cuotas</option>
+                        <option>36 Cuotas</option>
+                        <option>48 Cuotas</option>
+                        <option>60 Cuotas</option>
+                    </select>
+                    <br>
+                    <input type="checkbox">He leido y acepto los Terminos y Condiciones.
+                    <br><br>
+                    <input type="button" id="reiniciar" value="Reiniciar">
+                    <input type="button" id="solicitar" value="Solicitar financiacion">
+                </form>
+            </div>
+            <div id="chequeo" class="form">
+                                
+            </div>
+        </div>
+    </main>
+    <footer>
+        <ul class="redes">
+            <li>FACEBOOK</li>
+            <li>INSTAGRAM</li>
+            <li>TWITTER</li>
+        </ul>
+
+        <h6>TODOS LOS DERECHOS RESERVADOS</h3>
+
+    </footer>
+    
+    <script src="jscript.js"></script>    
+</body>
+</html>

@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px black;
+    background: linear-gradient(120deg, rgb(161, 157, 161) 0%, rgb(214, 214, 214) 37%, rgba(161, 157, 161) 100%);
+    
+}
+
+.logotipo{
+    height: 100%;
+}
+
+nav{
+    height: 100%;
+    width: 50%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu li{
+    list-style: none;
+}
+main{
+    height: 70vh;
+    width: 80%;
+    margin: auto;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #fff;
+    background-color: rgb(54, 54, 54);
+    height: 80px;
+}
+
+#formularios{
+    display: flex;
+    flex-direction: row;
+}
+
+.form{
+    height: 500px;
+    width: 50%;
+    border: 3px black;
+}
