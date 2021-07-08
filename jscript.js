@@ -37,7 +37,7 @@ class Usuario {
 class Vehiculo {
     constructor(datos) {
         this.marca = datos.marca;
-        this.modelo = datos.apellido;
+        this.modelo = datos.modelo;
         this.año = datos.año;
         this.estado = datos.estado;
         this.kms = datos.kms;

@@ -4,7 +4,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 header{
-    width: 80%;
+    width: 100%;
     height: 100px;
     margin: auto;
     display: flex;
@@ -21,7 +21,7 @@ header{
 
 nav{
     height: 100%;
-    width: 50%;
+    width: 40%;
     color: black;
     display: flex;
     flex-direction: column;
@@ -36,8 +36,9 @@ nav{
 .menu li{
     list-style: none;
 }
+
 main{
-    height: 70vh;
+    height: 1300px;
     width: 80%;
     margin: auto;
 }
@@ -60,4 +61,42 @@ footer{
     height: 500px;
     width: 50%;
     border: 3px black;
+}
+
+.formSolicitud input{
+    height: 25px;
+    width: 250px;
+}
+
+.portada{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.textPortada{
+    font-size: 48px;
+    text-align: center;
+    margin: 0;
+    padding-top: 200px;
+    padding-bottom: 242px;
+    color: #fff;
+    background-color: rgba(113, 138, 175, 0.40);
+    
+}
+
+.comprar{
+    width: 50%;
+    height: 100%;
+    background-image: url(img/comprar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.vender{
+    width: 50%;
+    height: 100%;
+    background-image: url(img/vender.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
