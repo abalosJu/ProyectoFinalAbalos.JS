@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+
 }
 header{
     width: 100%;
@@ -38,7 +39,7 @@ nav{
 }
 
 main{
-    height: 1300px;
+    height: 2170px;
     width: 80%;
     margin: auto;
 }
@@ -52,20 +53,15 @@ footer{
     height: 80px;
 }
 
-#formularios{
-    display: flex;
-    flex-direction: row;
-}
-
 .form{
     height: 500px;
     width: 50%;
-    border: 3px black;
+    margin: auto;
 }
 
-.formSolicitud input{
-    height: 25px;
-    width: 250px;
+.formSolicitud > input{
+    height: 30px;
+    width: 300px;
 }
 
 .portada{
@@ -83,7 +79,6 @@ footer{
     padding-bottom: 242px;
     color: #fff;
     background-color: rgba(113, 138, 175, 0.40);
-    
 }
 
 .comprar{
@@ -99,4 +94,25 @@ footer{
     background-image: url(img/vender.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.formCompra{
+    margin-top: 20px;
+    height: 800px;
+    border: 2px black solid;
+}
+
+#solicitud{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formVenta{
+    margin-top: 20px;
+    height: 800px;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

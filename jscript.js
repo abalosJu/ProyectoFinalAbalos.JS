@@ -1,8 +1,8 @@
-const usuario = [];
-const vehiculo = [];
-const compra = [];
-const venta = [];
-const prestamo = [];
+const usuario = []; //Se almacenaran los datos de los usuarios que soliciten la Compra/Venta.
+const vehiculo = []; //Se almacenaran los datos de los vehiculos. Ya sean nuevos o usados.
+const compra = []; //Al efectuar una compra aqui se cargaran los datos del usuario y el vehiculo en cuestion. Tambien de ser requerido los datos de financiacion.
+const venta = []; //Al efectuar una venta(cotizacion) aqui se cargaran los datos del usuario y el vehiculo en cuestion.
+const prestamo = []; //Se almacenaran los datos al solicitar una financiacion. 
 
 
 class Usuario {
