@@ -38,8 +38,8 @@ class Vehiculo {
     constructor(datos) {
         this.marca = datos.marca;
         this.modelo = datos.modelo;
+        this.color = datos.color;
         this.año = datos.año;
-        this.estado = datos.estado;
         this.kms = datos.kms;
         this.valor = datos.valor;
         this.vendido = false;
@@ -70,9 +70,9 @@ function crearUsuario(){
 
     usuario.push(nuevoUsuario);
 
-    let chequeo = document.getElementById("chequeo");
+    let chequeo = document.getElementById("solicitudCompra");
     chequeo.innerHTML = `
-        <h3 style="display: block;">Datos ingresados</h3>
+        <h3>Datos ingresados</h3>
         <ul>
             <li>Solcitante: ${usuario[0].nombre} ${usuario[0].apellido}.</li>
             <li>Email de contacto: ${usuario[0].email}</li>
@@ -81,35 +81,59 @@ function crearUsuario(){
         </ul>
         <p>Pronto te llegara un mail a ${usuario[0].email} con las mejores alternativas de financiamiento para tu solicitud.</p>
         `;
+
+    function enviarAServidor(obj){
+        const enJSON = JSON.stringify(obj); //SE CONVIERTE A JSON PARA ENVIAR AL SERVIDOR (SIMULACION)
+        localStorage.setItem("vehiculoVenta", enJSON); //GUARDAMOS EL OBJETO EN EL ALMACENAMIENTO LOCAL
+    }
+
+    enviarAServidor(nuevoUsuario);
 }
 
 function ingresarVehiculo(){
 
-    let marcaN = prompt("Ingrese Marca.");
-    let modeloN = prompt("Ingrese Modelo.");
-    let añoN = prompt("Ingrese año.");
-    let estadoN = prompt("Ingrese condicion (NUEVO/USADO).");
-    let kmsN = parseInt(prompt("Ingrese Kms recorridos."));
-    let valorN = parseInt(prompt("Ingrese valor del vehiculo."));
+    let marcaN = document.getElementById("marca").value;
+    let modeloN = document.getElementById("modelo").value;
+    let colorN = document.getElementById("color").value;
+    let añoN = parseInt(document.getElementById("año").value);
+    let kmsN = parseInt(document.getElementById("kms").value);
+    let valorN = parseInt(document.getElementById("precio").value);
     
     alert("Vehiculo ingresado con exito!");
 
     const nuevoVehiculo = new Vehiculo ({
         marca: marcaN,
         modelo: modeloN,
+        color: colorN,
         año: añoN,
-        estado: estadoN,
         kms: kmsN,
         valor: valorN,
     });
 
     vehiculo.push(nuevoVehiculo);
+
+    let chequeo = document.getElementById("solicitudVenta");
+    chequeo.innerHTML = `
+        <h3>Datos ingresados</h3>
+        <ul>
+            <li>Marca: ${vehiculo[0].marca}.</li>
+            <li>Modelo: ${vehiculo[0].modelo} (${vehiculo[0].color}).</li>
+            <li>Año: ${vehiculo[0].año}</li>
+            <li>Precio sugerido: ${vehiculo[0].valor}</li>
+        </ul>
+        <p>Pronto te llegara un mail a ${vehiculo[0].email} con las mejores ofertas a tu solicitud.</p>
+        `;
+
+    function enviarAServidor(obj){
+        const enJSON = JSON.stringify(obj); //SE CONVIERTE A JSON PARA ENVIAR AL SERVIDOR (SIMULACION)
+        localStorage.setItem("vehiculoVenta", enJSON); //GUARDAMOS EL OBJETO EN EL ALMACENAMIENTO LOCAL
+    }
+
+    enviarAServidor(nuevoVehiculo);
 }
 
-function resaltar(){
+let botonCompra = document.getElementById("solicitarCompra");
+botonCompra.addEventListener("click", crearUsuario);
 
-}
-
-let boton = document.getElementById("solicitar");
-boton.addEventListener("click", crearUsuario);
-
+let botonVenta = document.getElementById("solicitarVenta");
+botonVenta.addEventListener("click", ingresarVehiculo);
