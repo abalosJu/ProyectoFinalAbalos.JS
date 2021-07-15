@@ -1,9 +1,5 @@
 const usuario = []; //Se almacenaran los datos de los usuarios que soliciten la Compra/Venta.
 const vehiculo = []; //Se almacenaran los datos de los vehiculos. Ya sean nuevos o usados.
-const compra = []; //Al efectuar una compra aqui se cargaran los datos del usuario y el vehiculo en cuestion. Tambien de ser requerido los datos de financiacion.
-const venta = []; //Al efectuar una venta(cotizacion) aqui se cargaran los datos del usuario y el vehiculo en cuestion.
-const prestamo = []; //Se almacenaran los datos al solicitar una financiacion. 
-
 
 class Usuario {
     constructor(datos) {
@@ -84,7 +80,7 @@ function crearUsuario(){
 
     function enviarAServidor(obj){
         const enJSON = JSON.stringify(obj); //SE CONVIERTE A JSON PARA ENVIAR AL SERVIDOR (SIMULACION)
-        localStorage.setItem("vehiculoVenta", enJSON); //GUARDAMOS EL OBJETO EN EL ALMACENAMIENTO LOCAL
+        localStorage.setItem("nuevoUsuario", enJSON); //GUARDAMOS EL OBJETO EN EL ALMACENAMIENTO LOCAL
     }
 
     enviarAServidor(nuevoUsuario);
@@ -116,12 +112,11 @@ function ingresarVehiculo(){
     chequeo.innerHTML = `
         <h3>Datos ingresados</h3>
         <ul>
-            <li>Marca: ${vehiculo[0].marca}.</li>
-            <li>Modelo: ${vehiculo[0].modelo} (${vehiculo[0].color}).</li>
-            <li>Año: ${vehiculo[0].año}</li>
-            <li>Precio sugerido: ${vehiculo[0].valor}</li>
+            <li>Marca: ${nuevoVehiculo.marca}.</li>
+            <li>Modelo: ${nuevoVehiculo.modelo} (${nuevoVehiculo.color}).</li>
+            <li>Año: ${nuevoVehiculo.año}</li>
+            <li>Precio sugerido: ${nuevoVehiculo.valor}</li>
         </ul>
-        <p>Pronto te llegara un mail a ${vehiculo[0].email} con las mejores ofertas a tu solicitud.</p>
         `;
 
     function enviarAServidor(obj){
