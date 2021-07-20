@@ -44,13 +44,13 @@ class Vehiculo {
 
 function crearUsuario(){
 
-    let nombre_u = document.getElementById("nombre").value;
-    let apellido_u = document.getElementById("apellido").value;
-    let edad_u = parseInt(document.getElementById("edad").value);
-    let email_u = document.getElementById("email").value;
-    let sueldo_u = parseInt(document.getElementById("sueldo").value);
-    let importe_u = parseInt(document.getElementById("prestamo").value);
-    let cuotas_u = parseInt(document.getElementById("cuotas").value);
+    let nombre_u = $("#nombre").val();
+    let apellido_u = $("#apellido").val();
+    let edad_u = parseInt($("#edad").val());
+    let email_u = $("#email").val();
+    let sueldo_u = parseInt($("#sueldo").val());
+    let importe_u = parseInt($("#importe").val());
+    let cuotas_u = parseInt($("#cuotas").val());
 
     alert("Gracias. \nAhora procesaremos los datos.");
 
@@ -66,14 +66,14 @@ function crearUsuario(){
 
     usuario.push(nuevoUsuario);
 
-    let chequeo = document.getElementById("solicitudCompra");
+    let chequeo = $("#solicitudCompra");
     chequeo.innerHTML = `
         <h3>Datos ingresados</h3>
         <ul>
-            <li>Solcitante: ${usuario[0].nombre} ${usuario[0].apellido}.</li>
-            <li>Email de contacto: ${usuario[0].email}</li>
-            <li>Monto solicitado: ${usuario[0].importe}</li>
-            <li>Cantidad de cuotas: ${usuario[0].cuotas}</li>
+            <li>Solcitante: ${nuevoUsuario.nombre} ${nuevoUsuario.apellido}.</li>
+            <li>Email de contacto: ${nuevoUsuario.email}</li>
+            <li>Monto solicitado: ${nuevoUsuario.importe}</li>
+            <li>Cantidad de cuotas: ${nuevoUsuario.cuotas}</li>
         </ul>
         <p>Pronto te llegara un mail a ${usuario[0].email} con las mejores alternativas de financiamiento para tu solicitud.</p>
         `;
@@ -88,12 +88,12 @@ function crearUsuario(){
 
 function ingresarVehiculo(){
 
-    let marcaN = document.getElementById("marca").value;
-    let modeloN = document.getElementById("modelo").value;
-    let colorN = document.getElementById("color").value;
-    let añoN = parseInt(document.getElementById("año").value);
-    let kmsN = parseInt(document.getElementById("kms").value);
-    let valorN = parseInt(document.getElementById("precio").value);
+    let marcaN = $("#marca").val();
+    let modeloN = $("#modelo").val();
+    let colorN = $("#color").val();
+    let añoN = parseInt($("#año").val());
+    let kmsN = parseInt($("#kms").val());
+    let valorN = parseInt($("#precio").val());
     
     alert("Vehiculo ingresado con exito!");
 
@@ -108,8 +108,8 @@ function ingresarVehiculo(){
 
     vehiculo.push(nuevoVehiculo);
 
-    let chequeo = document.getElementById("solicitudVenta");
-    chequeo.innerHTML = `
+    //INCORPORAMOS DATOS AL DOM MEDIANTE JQUERY
+    $("#solicitudVenta").append(`
         <h3>Datos ingresados</h3>
         <ul>
             <li>Marca: ${nuevoVehiculo.marca}.</li>
@@ -117,7 +117,7 @@ function ingresarVehiculo(){
             <li>Año: ${nuevoVehiculo.año}</li>
             <li>Precio sugerido: ${nuevoVehiculo.valor}</li>
         </ul>
-        `;
+        `);
 
     function enviarAServidor(obj){
         const enJSON = JSON.stringify(obj); //SE CONVIERTE A JSON PARA ENVIAR AL SERVIDOR (SIMULACION)
@@ -127,8 +127,26 @@ function ingresarVehiculo(){
     enviarAServidor(nuevoVehiculo);
 }
 
-let botonCompra = document.getElementById("solicitarCompra");
-botonCompra.addEventListener("click", crearUsuario);
+$("#solicitarCompra").on("click", crearUsuario);
 
-let botonVenta = document.getElementById("solicitarVenta");
-botonVenta.addEventListener("click", ingresarVehiculo);
+$("#solicitarVenta").on("click", ingresarVehiculo);
+
+$(".comprar").click(function (e) {
+    e.preventDefault();
+    $("html, body").animate(
+        {
+            scrollTop: $(".formCompra").offset().top,
+        },
+        2000,
+    )
+})
+
+$(".vender").click(function (e) {
+    e.preventDefault();
+    $("html, body").animate(
+        {
+            scrollTop: $(".formVenta").offset().top,
+        },
+        2000,
+    )
+})
